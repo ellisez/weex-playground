@@ -3,6 +3,9 @@ Weex Playground is a development tool, which can be used to test and preview wee
 
 Find more about playground at our [website](https://weex.apache.org/guide/playground.html).
 
+# use location aar
+copy `weex_sdk-release.aar` to dirs `commons/aar` and `playground/aar`
+
 ## Run Weex Playground
 ### Android
 * Open `android` In Android Studio
