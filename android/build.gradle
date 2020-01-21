@@ -1,0 +1,49 @@
+
+buildscript {
+    repositories {
+        google()
+        maven(){
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        jcenter(){
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+    }
+}
+subprojects {
+    repositories {
+        google()
+        maven(){
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        maven() {
+            url 'http://oss.jfrog.org/oss-snapshot-local/'
+        }
+        jcenter(){
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+    }
+    buildscript {
+        repositories {
+            google()
+            maven(){
+                url 'https://maven.aliyun.com/repository/google'
+            }
+            jcenter(){
+                url 'https://maven.aliyun.com/repository/jcenter'
+            }
+        }
+    }
+}
+ext {
+    compileSdkVersion=28
+    minSdkVersion=14
+    targetSdkVersion=26
+    supportLibVersion="26.0.2"
+    fastjsonLibVersion="1.1.46.android"
+    weexSdkVersion="0.28.0"
+    implementFromWeex = true
+}
