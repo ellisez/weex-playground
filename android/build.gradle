@@ -25,6 +25,9 @@ subprojects {
         jcenter(){
             url 'https://maven.aliyun.com/repository/jcenter'
         }
+        flatDir {
+            dirs '../packages'
+        }
     }
     buildscript {
         repositories {

@@ -61,11 +61,7 @@ android {
         noCompress 'wasm'
     }
 }
-repositories {
-    flatDir {
-        dirs 'aar'
-    }
-}
+
 dependencies {
     androidTestImplementation "androidx.annotation:annotation:1.0.0"
     androidTestImplementation 'junit:junit:4.12'

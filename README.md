@@ -3,11 +3,9 @@ Weex Playground is a development tool, which can be used to test and preview wee
 
 Find more about playground at our [website](https://weex.apache.org/guide/playground.html).
 
-# use location aar
-copy `weex_sdk-release.aar` to dirs `commons/aar` and `playground/aar`
-
 ## Run Weex Playground
 ### Android
+* copy `weex_sdk-release.aar` to dirs `packages`
 * Open `android` In Android Studio
 * In `playground/java/org.apache.weex/IndexActivity`, modify `CURRENT_IP` to your local IP
 * Click <img src="http://gtms04.alicdn.com/tps/i4/TB1wCcqMpXXXXakXpXX3G7tGXXX-34-44.png" height="16" > (`Run` button)
