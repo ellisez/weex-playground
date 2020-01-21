@@ -25,20 +25,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
-import android.support.v4.content.FileProvider;
-import android.support.v7.app.NotificationCompat;
+import androidx.core.content.FileProvider;
+import androidx.core.app.NotificationCompat;
 import android.widget.Toast;
-import com.taobao.weex.WXEnvironment;
-import com.taobao.weex.WXSDKManager;
-import com.taobao.weex.utils.WXLogUtils;
+import org.apache.weex.WXEnvironment;
+import org.apache.weex.WXSDKManager;
+import org.apache.weex.utils.WXLogUtils;
 import java.io.File;
 import org.apache.weex.R;
 import org.apache.weex.BuildConfig;
 
 public class UpdateService extends IntentService {
 
-  private static final String ACTION_UPDATE = "com.taobao.weex.service.action.UPDATE";
-  private static final String EXTRA_URL = "com.taobao.weex.service.extra.URL";
+  private static final String ACTION_UPDATE = "org.apache.weex.service.action.UPDATE";
+  private static final String EXTRA_URL = "org.apache.weex.service.extra.URL";
   private final int NOTIFY_ID = 10006024;
 
   private NotificationManager manager;

@@ -40,10 +40,13 @@ subprojects {
 }
 ext {
     compileSdkVersion=28
-    minSdkVersion=14
+    //minSdkVersion=16
+    minSdkVersion=18
     targetSdkVersion=26
-    supportLibVersion="26.0.2"
-    fastjsonLibVersion="1.1.46.android"
-    weexSdkVersion="0.28.0"
-    implementFromWeex = true
+    //supportLibVersion="28.0.3"
+    appcompatVersion="1.0.0"
+    fastjsonLibVersion="1.1.70.android"
+
+    //weexSdkVersion="0.28.0"
+    useLocalSdk = true
 }

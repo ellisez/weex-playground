@@ -18,8 +18,6 @@
  */
 package org.apache.weex.util;
 
-import android.app.Activity;
-import android.support.v7.widget.RecyclerView;
 import android.test.InstrumentationTestCase;
 import android.test.TouchUtils;
 import android.text.TextUtils;
@@ -28,8 +26,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ScrollView;
-
-import com.taobao.weex.ui.view.WXTextView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+import org.apache.weex.ui.view.WXTextView;
 
 import java.util.ArrayList;
 
@@ -62,7 +61,7 @@ public class ViewUtil{
         return out;
     }
 
-    public static ArrayList<View> getAllChildViews(Activity activity) {
+    public static ArrayList<View> getAllChildViews(AppCompatActivity activity) {
         View view = activity.getWindow().getDecorView();
         return getAllChildViews(view);
     }
@@ -156,7 +155,7 @@ public class ViewUtil{
         return (view.getMeasuredHeight());
     }
 
-    public static void dragQuarterScreenUp(InstrumentationTestCase test, Activity activity) {
+    public static void dragQuarterScreenUp(InstrumentationTestCase test, AppCompatActivity activity) {
 
         TouchUtils.dragQuarterScreenUp(test, activity);
     }

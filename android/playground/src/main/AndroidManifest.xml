@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 
+<!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
 distributed with this work for additional information
@@ -52,7 +52,7 @@ under the License.
             android:name="org.apache.weex.util.CoverageDataDumper"
             tools:ignore="ExportedReceiver">
             <intent-filter>
-                <action android:name="com.taobao.weex.DUMP_COVERAGE_DATA"/>
+                <action android:name="org.apache.weex.DUMP_COVERAGE_DATA"/>
             </intent-filter>
         </receiver>
 
@@ -116,7 +116,7 @@ under the License.
             android:exported="false" />
 
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="org.apache.weex.fileprovider"
             android:grantUriPermissions="true"
             android:exported="false">

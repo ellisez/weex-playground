@@ -22,7 +22,7 @@ package org.apache.weex.util;
 import android.content.Context;
 import android.util.Log;
 
-import com.taobao.weex.utils.WXLogUtils;
+import org.apache.weex.utils.WXLogUtils;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

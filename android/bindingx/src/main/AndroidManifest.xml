@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.org.yxj.android.bindingx" >
+
+    <application>
+        <service
+            android:name="cn.org.yxj.android.bindingx.plugin.WXBindingXModuleService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="bindingx" />
+                <action android:name="binding" />
+                <action android:name="expressionBinding" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

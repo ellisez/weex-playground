@@ -19,7 +19,6 @@
 package org.apache.weex.thirdParty.zxing;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
@@ -28,29 +27,26 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
-import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
+import android.view.*;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import androidx.appcompat.app.AlertDialog;
 import org.apache.weex.CustomCaptureActivity;
 import org.apache.weex.R;
 
-public final class HistoryActivity extends ListActivity {
+public final class HistoryActivity extends AppCompatListActivity {
 
   private static final String TAG = HistoryActivity.class.getSimpleName();
 
   private HistoryManager historyManager;
   private ArrayAdapter<HistoryItem> adapter;
   private CharSequence originalTitle;
-  
+
   @Override
   protected void onCreate(Bundle icicle) {
     super.onCreate(icicle);
-    this.historyManager = new HistoryManager(this);  
+    this.historyManager = new HistoryManager(this);
     adapter = new HistoryItemAdapter(this);
     setListAdapter(adapter);
     View listview = getListView();

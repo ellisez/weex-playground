@@ -19,29 +19,29 @@
 
 package org.apache.weex.benchmark;
 
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.awaitility.Awaitility.await;
 import static org.hamcrest.MatcherAssert.assertThat;
-import android.support.annotation.NonNull;
-import android.support.test.InstrumentationRegistry;
-import android.support.test.filters.SdkSuppress;
-import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
-import android.support.test.uiautomator.By;
-import android.support.test.uiautomator.Direction;
-import android.support.test.uiautomator.UiDevice;
-import android.support.test.uiautomator.UiObject2;
-import android.support.test.uiautomator.Until;
-import android.support.test.espresso.contrib.RecyclerViewActions;
+import androidx.annotation.NonNull;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.filters.SdkSuppress;
+import androidx.test.rule.ActivityTestRule;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.uiautomator.By;
+import androidx.test.uiautomator.Direction;
+import androidx.test.uiautomator.UiDevice;
+import androidx.test.uiautomator.UiObject2;
+import androidx.test.uiautomator.Until;
+import androidx.test.espresso.contrib.RecyclerViewActions;
 import android.text.TextUtils;
 import android.util.Log;
 import org.apache.weex.BenchmarkActivity;
-import com.taobao.weex.WXEnvironment;
-import com.taobao.weex.common.WXPerformance;
-import com.taobao.weex.ui.view.listview.WXRecyclerView;
-import com.taobao.weex.utils.WXLogUtils;
+import org.apache.weex.WXEnvironment;
+import org.apache.weex.common.WXPerformance;
+import org.apache.weex.ui.view.listview.WXRecyclerView;
+import org.apache.weex.utils.WXLogUtils;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
@@ -214,7 +214,7 @@ public class BenchmarkTest {
         (RecyclerViewActions.scrollToPosition(0));
     return benchmarkActivity.getWXInstance().getWXPerformance().screenRenderTime;
   }
-    
+
   private WXPerformance fetchPerformance() {
     return loadWeexPage().getWXInstance().getWXPerformance();
   }

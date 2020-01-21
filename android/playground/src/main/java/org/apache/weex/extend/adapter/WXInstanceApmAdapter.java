@@ -22,8 +22,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import android.util.Log;
-import com.taobao.weex.performance.IWXApmMonitorAdapter;
-import com.taobao.weex.performance.WXInstanceApm;
+import org.apache.weex.performance.IWXApmMonitorAdapter;
+import org.apache.weex.performance.WXInstanceApm;
 import org.json.JSONException;
 import org.json.JSONObject;
 

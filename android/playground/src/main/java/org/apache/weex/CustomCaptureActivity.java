@@ -18,37 +18,31 @@
  */
 package org.apache.weex;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.Window;
-import android.view.WindowManager;
+import android.view.*;
 import android.widget.Toast;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import com.google.zxing.Result;
 import com.google.zxing.ResultPoint;
 import com.journeyapps.barcodescanner.BarcodeCallback;
 import com.journeyapps.barcodescanner.BarcodeResult;
 import com.journeyapps.barcodescanner.CaptureManager;
 import com.journeyapps.barcodescanner.DecoratedBarcodeView;
-import com.taobao.weex.WXEnvironment;
-import com.taobao.weex.WXSDKEngine;
-import java.util.List;
 import org.apache.weex.constants.Constants;
 import org.apache.weex.thirdParty.zxing.HistoryActivity;
 import org.apache.weex.thirdParty.zxing.HistoryItem;
 import org.apache.weex.thirdParty.zxing.HistoryManager;
 
-public class CustomCaptureActivity extends Activity {
+import java.util.List;
+
+public class CustomCaptureActivity extends AppCompatActivity {
     private CaptureManager capture;
     private DecoratedBarcodeView barcodeScannerView;
     private HistoryManager historyManager;

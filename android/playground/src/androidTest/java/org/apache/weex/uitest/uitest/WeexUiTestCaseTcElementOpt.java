@@ -34,7 +34,7 @@ import org.apache.weex.util.ViewUtil;
 import org.apache.weex.WXPageActivity;
 import org.apache.weex.WeappJsBaseTestCase;
 import org.apache.weex.constants.Constants;
-import com.taobao.weex.ui.view.WXTextView;
+import org.apache.weex.ui.view.WXTextView;
 
 import java.io.IOException;
 import java.util.ArrayList;

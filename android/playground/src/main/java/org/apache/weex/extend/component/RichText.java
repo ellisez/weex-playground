@@ -6,9 +6,9 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -19,18 +19,18 @@
 package org.apache.weex.extend.component;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.style.URLSpan;
 import android.widget.TextView;
 
-import com.taobao.weex.WXSDKInstance;
-import com.taobao.weex.ui.action.BasicComponentData;
-import com.taobao.weex.ui.component.WXComponent;
-import com.taobao.weex.ui.component.WXComponentProp;
-import com.taobao.weex.ui.component.WXVContainer;
+import org.apache.weex.WXSDKInstance;
+import org.apache.weex.ui.action.BasicComponentData;
+import org.apache.weex.ui.component.WXComponent;
+import org.apache.weex.ui.component.WXComponentProp;
+import org.apache.weex.ui.component.WXVContainer;
 
 public class RichText extends WXComponent<TextView> {
 

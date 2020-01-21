@@ -19,9 +19,9 @@
 package org.apache.weex.extend.component;
 
 import android.graphics.Color;
-import android.support.annotation.Nullable;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.Nullable;
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.Animation;
@@ -32,21 +32,21 @@ import android.view.animation.TranslateAnimation;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.taobao.weex.WXEnvironment;
-import com.taobao.weex.WXSDKInstance;
-import com.taobao.weex.common.Constants;
-import com.taobao.weex.common.ICheckBindingScroller;
-import com.taobao.weex.common.OnWXScrollListener;
-import com.taobao.weex.ui.action.BasicComponentData;
-import com.taobao.weex.ui.animation.WXAnimationBean;
-import com.taobao.weex.ui.component.Scrollable;
-import com.taobao.weex.ui.component.WXComponent;
-import com.taobao.weex.ui.component.WXDiv;
-import com.taobao.weex.ui.component.WXVContainer;
-import com.taobao.weex.ui.component.list.BasicListComponent;
-import com.taobao.weex.ui.component.list.template.WXRecyclerTemplateList;
-import com.taobao.weex.utils.WXLogUtils;
-import com.taobao.weex.utils.WXResourceUtils;
+import org.apache.weex.WXEnvironment;
+import org.apache.weex.WXSDKInstance;
+import org.apache.weex.common.Constants;
+import org.apache.weex.common.ICheckBindingScroller;
+import org.apache.weex.common.OnWXScrollListener;
+import org.apache.weex.ui.action.BasicComponentData;
+import org.apache.weex.ui.animation.WXAnimationBean;
+import org.apache.weex.ui.component.Scrollable;
+import org.apache.weex.ui.component.WXComponent;
+import org.apache.weex.ui.component.WXDiv;
+import org.apache.weex.ui.component.WXVContainer;
+import org.apache.weex.ui.component.list.BasicListComponent;
+import org.apache.weex.ui.component.list.template.WXRecyclerTemplateList;
+import org.apache.weex.utils.WXLogUtils;
+import org.apache.weex.utils.WXResourceUtils;
 
 import java.util.ArrayList;
 

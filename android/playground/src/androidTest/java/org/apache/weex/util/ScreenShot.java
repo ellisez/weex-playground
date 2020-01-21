@@ -18,21 +18,20 @@
  */
 package org.apache.weex.util;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Environment;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.Window;
 import android.widget.ScrollView;
-
-import com.taobao.weex.ui.view.listview.WXRecyclerView;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import org.apache.weex.ui.view.listview.WXRecyclerView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -159,7 +158,7 @@ public  class ScreenShot {
 
     }
     // Gets the Activity screenshots, save to png file
-    private static Bitmap takeScreenShot(Activity activity) {
+    private static Bitmap takeScreenShot(AppCompatActivity activity) {
 
         Context ctx = activity.getApplicationContext();
         String screenShotDir = getWeexScreenShotDir(ctx);
@@ -250,7 +249,7 @@ public  class ScreenShot {
         }
     }
 
-    public static void shoot(Activity activity, String pathName) throws IOException {
+    public static void shoot(AppCompatActivity activity, String pathName) throws IOException {
 
         if(SdCardHelper.isHasSdcard()){
 //            ScreenShot.saveToSD(ScreenShot.takeScreenShot(activity), SdCardHelper.SDCardRoot + "WeexTest/ScreenShot/", pathName /*+System.currentTimeMillis()*/ + ".png");
@@ -266,7 +265,7 @@ public  class ScreenShot {
 //
 //    }
 
-    public static void takeScreenShotIncludeDialog(Activity activity, String file){
+    public static void takeScreenShotIncludeDialog(AppCompatActivity activity, String file){
         if (Environment.getExternalStorageState().equals(
                 Environment.MEDIA_MOUNTED)) {
 
@@ -290,10 +289,10 @@ public  class ScreenShot {
 
     }
 
-    public static  int getActionBarHeight(Activity activity) {
+    public static  int getActionBarHeight(AppCompatActivity activity) {
         int actionBarHeight = 0;
-        if(activity.getActionBar()!= null){
-            actionBarHeight = activity.getActionBar().getHeight();
+        if(activity.getSupportActionBar()!= null){
+            actionBarHeight = activity.getSupportActionBar().getHeight();
         }
 
         if (actionBarHeight != 0)
@@ -301,7 +300,7 @@ public  class ScreenShot {
 
         final TypedValue tv = new TypedValue();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            if (activity.getTheme().resolveAttribute(android.support.v7.appcompat.R.attr.actionBarSize, tv, true)){
+            if (activity.getTheme().resolveAttribute(androidx.appcompat.appcompat.R.attr.actionBarSize, tv, true)){
                 actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, activity.getResources().getDisplayMetrics());
                 Log.e("actionBarHeight==",actionBarHeight +  "android.support.v7.appcompat.R.attr.actionBarSize");
 
@@ -317,7 +316,7 @@ public  class ScreenShot {
         return actionBarHeight;
     }
 
-    public  static int getStatusBarHeight1(Activity activity){
+    public  static int getStatusBarHeight1(AppCompatActivity activity){
         int result = 0;
         int resourceId = activity.getResources().getIdentifier("status_bar_height", "dimen", "android");
         if (resourceId > 0) {
@@ -328,7 +327,7 @@ public  class ScreenShot {
 
         return result;
     }
-    public static  int getStatusBarHeight(Activity activity) {
+    public static  int getStatusBarHeight(AppCompatActivity activity) {
         int result = 0;
         Rect rect = new Rect();
         Window window = activity.getWindow();

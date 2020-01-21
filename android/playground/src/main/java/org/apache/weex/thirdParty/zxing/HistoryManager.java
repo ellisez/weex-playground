@@ -18,17 +18,6 @@
  */
 package org.apache.weex.thirdParty.zxing;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.nio.charset.Charset;
-import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import android.app.Activity;
 import android.content.ContentValues;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -39,9 +28,19 @@ import android.net.Uri;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.util.Log;
-
+import androidx.appcompat.app.AppCompatActivity;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.charset.Charset;
+import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * <p>Manages functionality related to scan history.</p>
@@ -67,7 +66,7 @@ public final class HistoryManager {
   private static final String[] ID_COL_PROJECTION = { DBHelper.ID_COL };
   private static final String[] ID_DETAIL_COL_PROJECTION = { DBHelper.ID_COL, DBHelper.DETAILS_COL };
 
-  private final Activity activity;
+  private final AppCompatActivity activity;
   private final boolean enableHistory;
   public final String ITEM_NUMBER = "ITEM_NUMBER";
   public static final String SAVE_HISTORY = "SAVE_HISTORY";
@@ -75,7 +74,7 @@ public final class HistoryManager {
   public static final String KEY_ENABLE_HISTORY = "preferences_history";
 
 
-  public HistoryManager(Activity activity) {
+  public HistoryManager(AppCompatActivity activity) {
     this.activity = activity;
     SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(activity);
     enableHistory = prefs.getBoolean(KEY_ENABLE_HISTORY, true);
@@ -137,13 +136,13 @@ public final class HistoryManager {
       close(cursor, db);
     }
   }
-  
+
   public void deleteHistoryItem(int number) {
     SQLiteOpenHelper helper = new DBHelper(activity);
     SQLiteDatabase db = null;
     Cursor cursor = null;
     try {
-      db = helper.getWritableDatabase();      
+      db = helper.getWritableDatabase();
       cursor = db.query(DBHelper.TABLE_NAME,
                         ID_COL_PROJECTION,
                         null, null, null, null,
@@ -176,7 +175,7 @@ public final class HistoryManager {
     SQLiteOpenHelper helper = new DBHelper(activity);
     SQLiteDatabase db = null;
     try {
-      db = helper.getWritableDatabase();      
+      db = helper.getWritableDatabase();
       // Insert the new entry into the DB.
       db.insert(DBHelper.TABLE_NAME, DBHelper.TIMESTAMP_COL, values);
     } finally {
@@ -188,7 +187,7 @@ public final class HistoryManager {
     // As we're going to do an update only we don't need need to worry
     // about the preferences; if the item wasn't saved it won't be udpated
     SQLiteOpenHelper helper = new DBHelper(activity);
-    SQLiteDatabase db = null;    
+    SQLiteDatabase db = null;
     Cursor cursor = null;
     try {
       db = helper.getWritableDatabase();
@@ -215,7 +214,7 @@ public final class HistoryManager {
           newDetails = null;
         } else {
           newDetails = oldDetails + " : " + itemDetails;
-        } 
+        }
         if (newDetails != null) {
           ContentValues values = new ContentValues();
           values.put(DBHelper.DETAILS_COL, newDetails);
@@ -232,7 +231,7 @@ public final class HistoryManager {
     SQLiteOpenHelper helper = new DBHelper(activity);
     SQLiteDatabase db = null;
     try {
-      db = helper.getWritableDatabase();      
+      db = helper.getWritableDatabase();
       db.delete(DBHelper.TABLE_NAME, DBHelper.TEXT_COL + "=?", new String[] { text });
     } finally {
       close(null, db);
@@ -244,7 +243,7 @@ public final class HistoryManager {
     SQLiteDatabase db = null;
     Cursor cursor = null;
     try {
-      db = helper.getWritableDatabase();      
+      db = helper.getWritableDatabase();
       cursor = db.query(DBHelper.TABLE_NAME,
                         ID_COL_PROJECTION,
                         null, null, null, null,
@@ -314,12 +313,12 @@ public final class HistoryManager {
       close(cursor, db);
     }
   }
-  
+
   void clearHistory() {
     SQLiteOpenHelper helper = new DBHelper(activity);
     SQLiteDatabase db = null;
     try {
-      db = helper.getWritableDatabase();      
+      db = helper.getWritableDatabase();
       db.delete(DBHelper.TABLE_NAME, null, null);
     } finally {
       close(null, db);
@@ -356,7 +355,7 @@ public final class HistoryManager {
   private static String massageHistoryField(String value) {
     return value == null ? "" : value.replace("\"","\"\"");
   }
-  
+
   private static void close(Cursor cursor, SQLiteDatabase database) {
     if (cursor != null) {
       cursor.close();

@@ -18,20 +18,19 @@
  */
 package org.apache.weex.extend.module;
 
-import android.app.Activity;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.graphics.drawable.DrawableCompat;
 import com.alibaba.fastjson.JSONObject;
-import com.taobao.weex.annotation.JSMethod;
-import com.taobao.weex.common.WXModule;
-import com.taobao.weex.utils.WXResourceUtils;
 import org.apache.weex.R;
+import org.apache.weex.annotation.JSMethod;
+import org.apache.weex.common.WXModule;
+import org.apache.weex.utils.WXResourceUtils;
 
 
 /**
@@ -61,7 +60,7 @@ public class WXTitleBar extends WXModule {
       if (color != null) {
         int c = WXResourceUtils.getColor(color);
 
-        Toolbar toolbar = (Toolbar) ((Activity) mWXSDKInstance.getContext()).findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) ((AppCompatActivity) mWXSDKInstance.getContext()).findViewById(R.id.toolbar);
         if (toolbar != null) {
           toolbar.setTitleTextColor(c);
           toolbar.setSubtitleTextColor(c);
@@ -96,7 +95,7 @@ public class WXTitleBar extends WXModule {
                 }
               }
             }
-            ((Activity) mWXSDKInstance.getContext()).invalidateOptionsMenu();
+            ((AppCompatActivity) mWXSDKInstance.getContext()).invalidateOptionsMenu();
           }
         }
       }

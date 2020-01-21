@@ -6,9 +6,9 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -18,7 +18,7 @@
  */
 package org.apache.weex.commons.adapter;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import org.apache.weex.commons.util.WSEventReporter;
 import com.squareup.okhttp.Headers;
@@ -28,9 +28,9 @@ import com.squareup.okhttp.Response;
 import com.squareup.okhttp.ws.WebSocket;
 import com.squareup.okhttp.ws.WebSocketCall;
 import com.squareup.okhttp.ws.WebSocketListener;
-import com.taobao.weex.appfram.websocket.IWebSocketAdapter;
-import com.taobao.weex.appfram.websocket.WebSocketCloseCodes;
-import com.taobao.weex.http.Status;
+import org.apache.weex.appfram.websocket.IWebSocketAdapter;
+import org.apache.weex.appfram.websocket.WebSocketCloseCodes;
+import org.apache.weex.http.Status;
 
 import java.io.EOFException;
 import java.io.IOException;

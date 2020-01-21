@@ -3,7 +3,7 @@ plugins {
 }
 
 apply plugin: 'com.android.application'
-if(!project.implementFromWeex){
+if(!project.useLocalSdk){
     //apply from: 'https://raw.githubusercontent.com/apache/incubator-weex/release/0.28/android/sdk/buildSrc/download_jsc.gradle'
     apply from: './download_jsc.gradle'
 }
@@ -16,7 +16,7 @@ android {
         targetSdkVersion project.targetSdkVersion
         versionCode 21
         versionName "0.21.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         ndk{
             abiFilters "arm64-v8a", "armeabi-v7a", "x86"
@@ -67,22 +67,22 @@ repositories {
     }
 }
 dependencies {
-    androidTestImplementation "com.android.support:support-annotations:${project.supportLibVersion}"
+    androidTestImplementation "androidx.annotation:annotation:1.0.0"
     androidTestImplementation 'junit:junit:4.12'
     androidTestImplementation 'org.awaitility:awaitility:3.0.0'
     androidTestImplementation 'org.awaitility:awaitility-proxy:3.0.0'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
-    androidTestImplementation('com.android.support.test.espresso:espresso-contrib:2.2.2', {
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation('androidx.test.espresso:espresso-contrib:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
         exclude group: 'com.android.support', module: 'support-v4'
         exclude group: 'com.android.support', module: 'design'
         exclude group: 'com.android.support', module: 'appcompat-v7'
         exclude group: 'com.android.support', module: 'recyclerview-v7'
     })
-    androidTestImplementation 'com.android.support.test:runner:0.5'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'com.squareup.picasso:picasso:2.5.2'
     androidTestImplementation 'org.hamcrest:hamcrest-library:1.3'
-    androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
     /*source dependency*/
 
     implementation project(':commons')
@@ -104,23 +104,24 @@ dependencies {
     implementation 'com.squareup.okhttp:okhttp-ws:2.3.0'
     implementation 'com.squareup.okio:okio:1.0.1'
     implementation "com.alibaba:fastjson:${project.fastjsonLibVersion}"
-    implementation "com.android.support:support-v4:${project.supportLibVersion}"
-    implementation "com.android.support:appcompat-v7:${project.supportLibVersion}"
-    implementation "com.android.support:design:${project.supportLibVersion}"
-    implementation "com.android.support:support-annotations:${project.supportLibVersion}"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation "androidx.appcompat:appcompat:${project.appcompatVersion}"
+    implementation "com.google.android.material:material:1.0.0"
+    implementation "androidx.annotation:annotation:1.0.0"
     implementation 'com.jakewharton.scalpel:scalpel:1.1.2'
     implementation 'com.taobao.android.weex_inspection:urlconnection_interceptor:1.0.0'
     implementation 'com.taobao.android.weex_inspection:protocol:1.1.4.1'
-    implementation 'com.android.support.test.espresso:espresso-idling-resource:2.2.2'
+    implementation 'androidx.test.espresso:espresso-idling-resource:3.1.0'
     implementation 'com.taobao.android:weex_inspector:0.24.2.4'
 //    implementation project(":inspector")
 
     // Bind actions to effects. See https://alibaba.github.io/bindingx/
-    implementation 'com.alibaba.android:bindingx-core:1.1.1.2@aar'
-    implementation 'com.alibaba.android:bindingx_weex_plugin:1.1.1@aar'
+    //implementation 'com.alibaba.android:bindingx-core:1.1.1.2@aar'
+    //implementation 'com.alibaba.android:bindingx_weex_plugin:1.1.1@aar'
+    implementation project(":bindingx")
 
     implementation('com.journeyapps:zxing-android-embedded:3.6.0') { transitive = false }
-    if(project.implementFromWeex){
+    if(project.useLocalSdk){
         // ./aar/weex_sdk-release.aar
         implementation (name: 'weex_sdk-release', ext: 'aar')
     }

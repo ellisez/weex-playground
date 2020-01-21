@@ -23,9 +23,9 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import android.util.Log;
-import com.taobao.weex.WXSDKInstance;
-import com.taobao.weex.common.WXRenderStrategy;
-import com.taobao.weex.utils.WXLogUtils;
+import org.apache.weex.WXSDKInstance;
+import org.apache.weex.common.WXRenderStrategy;
+import org.apache.weex.utils.WXLogUtils;
 
 /**
  * @author zhongcang

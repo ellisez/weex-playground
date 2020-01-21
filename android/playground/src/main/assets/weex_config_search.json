@@ -2,7 +2,7 @@
   "modules":[
     {
       "name" : "tool",
-      "className":"com.taobao.weex.ui.module.WXModalUIModule",
+      "className":"org.apache.weex.ui.module.WXModalUIModule",
        "methods":[
          "toast",
          "alert",
@@ -12,7 +12,7 @@
     },
     {
       "name" : "toolError",
-      "className":"com.taobao.weex.ui.module.WXModalUIModuleError",
+      "className":"org.apache.weex.ui.module.WXModalUIModuleError",
       "methods":[
         "toast",
         "alert"
@@ -22,13 +22,13 @@
   "components":[
     {
       "name":"diva",
-      "className":"com.taobao.weex.ui.component.WXDiv",
+      "className":"org.apache.weex.ui.component.WXDiv",
       "appendTree":false,
        "methods":[]
     },
     {
       "name":"divnot",
-      "className":"com.taobao.weex.ui.component.WXDivNot",
+      "className":"org.apache.weex.ui.component.WXDivNot",
       "appendTree":false,
       "methods":[]
     }

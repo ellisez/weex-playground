@@ -18,7 +18,6 @@
  */
 package org.apache.weex.util;
 
-import android.app.Activity;
 import android.app.Instrumentation;
 import android.content.Intent;
 import android.test.ActivityInstrumentationTestCase2;
@@ -26,13 +25,12 @@ import android.test.TouchUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-
+import androidx.appcompat.app.AppCompatActivity;
 import org.apache.weex.R;
 import org.apache.weex.WXPageActivity;
 import org.apache.weex.WeappJsBaseTestCase;
 import org.apache.weex.constants.Constants;
-import com.taobao.weex.ui.view.WXTextView;
-
+import org.apache.weex.ui.view.WXTextView;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -144,7 +142,7 @@ public class TestFlow extends ActivityInstrumentationTestCase2<WXPageActivity>{
                 sleep(1000);
 
                 setActivity(WXPageActivity.wxPageActivityInstance);
-                Activity activity2 = getActivity();
+                AppCompatActivity activity2 = getActivity();
                 Log.e(TAG, "activity2 = " + activity2.toString());
 
                 ViewGroup myGroup = (ViewGroup) (activity2.findViewById(R.id.container));
@@ -309,7 +307,7 @@ public class TestFlow extends ActivityInstrumentationTestCase2<WXPageActivity>{
     }
     private void doClickAction(String action, String actionValue){
         setActivity(WXPageActivity.wxPageActivityInstance);
-        Activity activity2 = getActivity();
+        AppCompatActivity activity2 = getActivity();
         Log.e(TAG, "activity2 = " + activity2.toString());
 
         ViewGroup myGroup = (ViewGroup) (activity2.findViewById(R.id.container));

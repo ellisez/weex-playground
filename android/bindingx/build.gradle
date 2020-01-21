@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion project.compileSdkVersion
+
+    defaultConfig {
+        compileSdkVersion project.compileSdkVersion
+
+        defaultConfig {
+            minSdkVersion project.minSdkVersion
+            targetSdkVersion project.targetSdkVersion
+            versionCode 1
+            versionName "1.0"
+        }
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+repositories {
+    flatDir {
+        dirs 'aar'
+    }
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "androidx.appcompat:appcompat:${project.appcompatVersion}"
+    implementation "com.google.android.material:material:1.0.0"
+
+    // ./aar/weex_sdk-release.aar
+    compileOnly (name: 'weex_sdk-release', ext: 'aar')
+}

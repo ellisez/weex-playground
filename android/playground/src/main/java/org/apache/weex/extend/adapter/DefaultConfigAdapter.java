@@ -18,7 +18,7 @@
  */
 package org.apache.weex.extend.adapter;
 
-import com.taobao.weex.adapter.IWXConfigAdapter;
+import org.apache.weex.adapter.IWXConfigAdapter;
 
 /**
  * @author zhongcang

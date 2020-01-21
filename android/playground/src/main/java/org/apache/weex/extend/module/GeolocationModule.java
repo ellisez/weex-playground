@@ -6,9 +6,9 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -19,21 +19,20 @@
 package org.apache.weex.extend.module;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.LocalBroadcastManager;
-
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import org.apache.weex.WXSDKManager;
+import org.apache.weex.annotation.JSMethod;
+import org.apache.weex.common.Destroyable;
+import org.apache.weex.common.WXModule;
 import org.apache.weex.extend.module.location.ILocatable;
 import org.apache.weex.extend.module.location.LocationFactory;
-import com.taobao.weex.WXSDKManager;
-import com.taobao.weex.common.Destroyable;
-import com.taobao.weex.annotation.JSMethod;
-import com.taobao.weex.common.WXModule;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -102,7 +101,7 @@ public class GeolocationModule extends WXModule implements Destroyable {
   }
 
   private void requestPermission(String successCallback, String errorCallback, String params, int requestCurPermissionCode) {
-    ActivityCompat.requestPermissions((Activity) mWXSDKInstance.getContext(),
+    ActivityCompat.requestPermissions((AppCompatActivity) mWXSDKInstance.getContext(),
                                       new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, requestCurPermissionCode);
     LocalBroadcastManager.getInstance(mWXSDKInstance.getContext())
         .registerReceiver(new PerReceiver(mWXSDKInstance.getInstanceId(), mILocatable, successCallback, errorCallback, params), new IntentFilter("actionRequestPermissionsResult"));

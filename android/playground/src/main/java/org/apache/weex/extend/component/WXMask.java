@@ -23,7 +23,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -31,11 +31,11 @@ import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 
 import org.apache.weex.extend.view.WXMaskView;
-import com.taobao.weex.WXSDKInstance;
-import com.taobao.weex.dom.CSSShorthand;
-import com.taobao.weex.dom.WXStyle;
-import com.taobao.weex.ui.action.BasicComponentData;
-import com.taobao.weex.ui.component.WXVContainer;
+import org.apache.weex.WXSDKInstance;
+import org.apache.weex.dom.CSSShorthand;
+import org.apache.weex.dom.WXStyle;
+import org.apache.weex.ui.action.BasicComponentData;
+import org.apache.weex.ui.component.WXVContainer;
 
 import java.util.HashMap;
 import java.util.Map;

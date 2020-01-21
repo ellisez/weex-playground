@@ -18,7 +18,6 @@
  */
 package org.apache.weex.util;
 
-import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
@@ -28,6 +27,7 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager.LayoutParams;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.*;
 import java.lang.reflect.Field;
@@ -60,7 +60,7 @@ public final class Falcon {
      *                 If there is some content it will be overwritten
      * @throws UnableToTakeScreenshotException When there is unexpected error during taking screenshot
      */
-    public static void takeScreenshot(Activity activity, File toFile) {
+    public static void takeScreenshot(AppCompatActivity activity, File toFile) {
         if (activity == null) {
             throw new IllegalArgumentException("Parameter activity cannot be null.");
         }
@@ -100,7 +100,7 @@ public final class Falcon {
      * @return Bitmap of what is displayed in activity.
      * @throws UnableToTakeScreenshotException When there is unexpected error during taking screenshot
      */
-    public static Bitmap takeScreenshotBitmap(Activity activity) {
+    public static Bitmap takeScreenshotBitmap(AppCompatActivity activity) {
         if (activity == null) {
             throw new IllegalArgumentException("Parameter activity cannot be null.");
         }
@@ -122,7 +122,7 @@ public final class Falcon {
 
     //region Methods
 
-    private static Bitmap takeBitmapUnchecked(Activity activity) throws InterruptedException {
+    private static Bitmap takeBitmapUnchecked(AppCompatActivity activity) throws InterruptedException {
         final List<ViewRootData> viewRoots = getRootViews(activity);
         int statusBarHeight = ScreenShot.getStatusBarHeight1(activity);
         int actionBarHeight = ScreenShot.getActionBarHeight(activity);
@@ -201,7 +201,7 @@ public final class Falcon {
     }
 
     @SuppressWarnings("unchecked") // no way to check
-    private static List<ViewRootData> getRootViews(Activity activity) {
+    private static List<ViewRootData> getRootViews(AppCompatActivity activity) {
         List<ViewRootData> rootViews = new ArrayList<>();
 
         Object globalWindowManager;

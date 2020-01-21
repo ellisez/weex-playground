@@ -21,11 +21,11 @@ package org.apache.weex.extend.module;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSONObject;
-import com.taobao.weex.annotation.JSMethod;
-import com.taobao.weex.bridge.JSCallback;
-import com.taobao.weex.bridge.WXBridgeManager;
-import com.taobao.weex.common.WXModule;
-import com.taobao.weex.utils.WXWsonJSONSwitch;
+import org.apache.weex.annotation.JSMethod;
+import org.apache.weex.bridge.JSCallback;
+import org.apache.weex.bridge.WXBridgeManager;
+import org.apache.weex.common.WXModule;
+import org.apache.weex.utils.WXWsonJSONSwitch;
 
 /**
  * Created by furture on 2018/1/18.

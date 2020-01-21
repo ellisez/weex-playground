@@ -6,9 +6,9 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -24,19 +24,18 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.widget.Toast;
-
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import com.google.zxing.integration.android.IntentIntegrator;
 import org.apache.weex.CustomCaptureActivity;
 import org.apache.weex.WXPageActivity;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.taobao.weex.annotation.JSMethod;
-import com.taobao.weex.bridge.JSCallback;
-import com.taobao.weex.common.WXModule;
+import org.apache.weex.annotation.JSMethod;
+import org.apache.weex.bridge.JSCallback;
+import org.apache.weex.common.WXModule;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -60,13 +59,13 @@ public class WXEventModule extends WXModule {
 
     if ("weex://go/scan".equals(url)) {
       if (ContextCompat.checkSelfPermission(mWXSDKInstance.getContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-        if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) mWXSDKInstance.getContext(), Manifest.permission.CAMERA)) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale((AppCompatActivity) mWXSDKInstance.getContext(), Manifest.permission.CAMERA)) {
           showCameraPermissionRationale();
         } else{
-          ActivityCompat.requestPermissions((Activity) mWXSDKInstance.getContext(), new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST_CODE);
+          ActivityCompat.requestPermissions((AppCompatActivity) mWXSDKInstance.getContext(), new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST_CODE);
         }
       } else {
-        new IntentIntegrator((Activity) mWXSDKInstance.getContext()).setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
+        new IntentIntegrator((AppCompatActivity) mWXSDKInstance.getContext()).setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
                 .setBeepEnabled(false).setCaptureActivity(CustomCaptureActivity.class)
                 .initiateScan();
  //       mWXSDKInstance.getContext().startActivity(new Intent(mWXSDKInstance.getContext(), CaptureActivity.class));

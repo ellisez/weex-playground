@@ -19,20 +19,20 @@
 
 package org.apache.weex.benchmark;
 
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.matcher.ViewMatchers.withClassName;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 
-import android.support.test.InstrumentationRegistry;
-import android.support.test.espresso.action.ViewActions;
-import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
-import android.support.test.uiautomator.UiDevice;
+import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.espresso.action.ViewActions;
+import androidx.test.rule.ActivityTestRule;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.uiautomator.UiDevice;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.TextView;
 import org.apache.weex.BenchmarkActivity;
-import com.taobao.weex.ui.view.WXFrameLayout;
-import com.taobao.weex.utils.WXLogUtils;
+import org.apache.weex.ui.view.WXFrameLayout;
+import org.apache.weex.utils.WXLogUtils;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;

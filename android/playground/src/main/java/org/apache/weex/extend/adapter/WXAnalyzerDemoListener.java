@@ -18,8 +18,8 @@
  */
 package org.apache.weex.extend.adapter;
 
-import com.taobao.weex.BuildConfig;
-import com.taobao.weex.performance.IWXAnalyzer;
+import org.apache.weex.BuildConfig;
+import org.apache.weex.performance.IWXAnalyzer;
 
 /**
  * @author zhongcang

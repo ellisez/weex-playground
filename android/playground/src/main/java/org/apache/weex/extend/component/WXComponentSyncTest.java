@@ -6,9 +6,9 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -18,12 +18,12 @@
  */
 package org.apache.weex.extend.component;
 
-import com.taobao.weex.WXSDKInstance;
-import com.taobao.weex.annotation.JSMethod;
-import com.taobao.weex.ui.action.BasicComponentData;
-import com.taobao.weex.ui.component.WXDiv;
-import com.taobao.weex.ui.component.WXVContainer;
-import com.taobao.weex.utils.WXLogUtils;
+import org.apache.weex.WXSDKInstance;
+import org.apache.weex.annotation.JSMethod;
+import org.apache.weex.ui.action.BasicComponentData;
+import org.apache.weex.ui.component.WXDiv;
+import org.apache.weex.ui.component.WXVContainer;
+import org.apache.weex.utils.WXLogUtils;
 
 /**
  * Created by zhengshihan on 2016/12/30.

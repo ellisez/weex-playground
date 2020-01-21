@@ -18,7 +18,6 @@
  */
 package org.apache.weex.uitest.TC_Input;
 
-import android.app.Activity;
 import android.app.Application;
 import android.app.Instrumentation;
 import android.content.Intent;
@@ -29,14 +28,15 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 import org.apache.weex.R;
-import org.apache.weex.util.ScreenShot;
-import org.apache.weex.util.ViewUtil;
 import org.apache.weex.WXPageActivity;
 import org.apache.weex.WeappJsBaseTestCase;
 import org.apache.weex.constants.Constants;
-import com.taobao.weex.ui.view.WXTextView;
+import org.apache.weex.ui.view.WXTextView;
+import org.apache.weex.util.ScreenShot;
+import org.apache.weex.util.ViewUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -109,7 +109,7 @@ public class WeexUiTestCaseTcInputEvent extends ActivityInstrumentationTestCase2
                sleep(2000);
 
                setActivity(WXPageActivity.wxPageActivityInstance);
-               Activity activity2 = getActivity();
+               AppCompatActivity activity2 = getActivity();
                Log.e(TAG, "activity2 = " + activity2.toString());
 
                ViewGroup myGroup = (ViewGroup)(activity2.findViewById(R.id.container));
@@ -155,9 +155,9 @@ public class WeexUiTestCaseTcInputEvent extends ActivityInstrumentationTestCase2
                ArrayList<View> listEventView = new ArrayList<View>();
 
                for(View view :inputListView11){
-                   if(view instanceof android.support.v7.widget.RecyclerView){
-                       android.support.v7.widget.RecyclerView listView =
-                               (android.support.v7.widget.RecyclerView) view;
+                   if(view instanceof RecyclerView){
+                       RecyclerView listView =
+                               (RecyclerView) view;
                        int count = listView.getChildCount();
                        Log.e(TAG, "listView count" + count);
                        listEventView = ViewUtil.getAllChildViews(listView);

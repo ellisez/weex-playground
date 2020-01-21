@@ -6,9 +6,9 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -21,18 +21,18 @@ package org.apache.weex;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
-import android.support.multidex.MultiDex;
+import androidx.multidex.MultiDex;
 import android.text.TextUtils;
 import android.util.Log;
-import com.alibaba.android.bindingx.plugin.weex.BindingX;
+import cn.org.yxj.android.bindingx.plugin.BindingX;
 import com.facebook.drawee.backends.pipeline.Fresco;
-import com.taobao.weex.InitConfig;
-import com.taobao.weex.WXEnvironment;
-import com.taobao.weex.WXSDKEngine;
-import com.taobao.weex.WXSDKManager;
-import com.taobao.weex.bridge.WXBridgeManager;
-import com.taobao.weex.common.WXException;
-import com.taobao.weex.performance.WXAnalyzerDataTransfer;
+import org.apache.weex.InitConfig;
+import org.apache.weex.WXEnvironment;
+import org.apache.weex.WXSDKEngine;
+import org.apache.weex.WXSDKManager;
+import org.apache.weex.bridge.WXBridgeManager;
+import org.apache.weex.common.WXException;
+import org.apache.weex.performance.WXAnalyzerDataTransfer;
 import java.lang.reflect.Method;
 import org.apache.weex.commons.adapter.DefaultWebSocketAdapterFactory;
 import org.apache.weex.commons.adapter.ImageAdapter;

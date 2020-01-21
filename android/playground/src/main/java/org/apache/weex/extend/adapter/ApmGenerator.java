@@ -18,8 +18,8 @@
  */
 package org.apache.weex.extend.adapter;
 
-import com.taobao.weex.performance.IApmGenerator;
-import com.taobao.weex.performance.IWXApmMonitorAdapter;
+import org.apache.weex.performance.IApmGenerator;
+import org.apache.weex.performance.IWXApmMonitorAdapter;
 
 /**
  * @author zhongcang

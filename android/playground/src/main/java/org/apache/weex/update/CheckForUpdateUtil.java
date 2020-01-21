@@ -18,7 +18,6 @@
  */
 package org.apache.weex.update;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
@@ -27,18 +26,20 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-import com.taobao.weex.WXEnvironment;
-import com.taobao.weex.WXSDKManager;
-import com.taobao.weex.adapter.IWXHttpAdapter;
-import com.taobao.weex.common.WXRequest;
-import com.taobao.weex.common.WXResponse;
-import com.taobao.weex.utils.WXLogUtils;
+import androidx.appcompat.app.AlertDialog;
+import org.apache.weex.R;
+import org.apache.weex.WXEnvironment;
+import org.apache.weex.WXSDKManager;
+import org.apache.weex.adapter.IWXHttpAdapter;
+import org.apache.weex.common.WXRequest;
+import org.apache.weex.common.WXResponse;
+import org.apache.weex.utils.WXLogUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
-import org.apache.weex.R;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 /**
  * Created by moxun on 2018/3/9.

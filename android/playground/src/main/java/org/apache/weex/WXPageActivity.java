@@ -6,9 +6,9 @@
  * to you under the Apache License, Version 2.0 (the
  * "License"); you may not use this file except in compliance
  * with the License.  You may obtain a copy of the License at
- * 
+ *
  *   http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
  * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -19,7 +19,6 @@
 package org.apache.weex;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -30,40 +29,35 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
-import android.support.v4.util.ArrayMap;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.collection.ArrayMap;
 import com.alibaba.fastjson.JSON;
+import org.apache.weex.appfram.navigator.IActivityNavBarSetter;
+import org.apache.weex.common.RenderTypes;
+import org.apache.weex.common.WXRenderStrategy;
 import org.apache.weex.commons.WXAnalyzerDelegate;
 import org.apache.weex.constants.Constants;
 import org.apache.weex.https.HotRefreshManager;
 import org.apache.weex.https.WXHttpManager;
 import org.apache.weex.https.WXHttpTask;
 import org.apache.weex.https.WXRequestListener;
-import com.taobao.weex.IWXRenderListener;
-import com.taobao.weex.RenderContainer;
-import com.taobao.weex.WXSDKEngine;
-import com.taobao.weex.WXSDKInstance;
-import com.taobao.weex.appfram.navigator.IActivityNavBarSetter;
-import com.taobao.weex.common.RenderTypes;
-import com.taobao.weex.common.WXRenderStrategy;
-import com.taobao.weex.render.WXAbstractRenderContainer;
-import com.taobao.weex.ui.component.NestedContainer;
-import com.taobao.weex.ui.component.WXComponent;
-import com.taobao.weex.ui.component.WXVContainer;
-import com.taobao.weex.utils.WXFileUtils;
-import com.taobao.weex.utils.WXLogUtils;
+import org.apache.weex.render.WXAbstractRenderContainer;
+import org.apache.weex.ui.component.NestedContainer;
+import org.apache.weex.ui.component.WXComponent;
+import org.apache.weex.ui.component.WXVContainer;
+import org.apache.weex.utils.WXFileUtils;
+import org.apache.weex.utils.WXLogUtils;
+
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Constructor;
@@ -79,7 +73,7 @@ public class WXPageActivity extends WXBaseActivity implements IWXRenderListener,
 
   private static final String TAG = "WXPageActivity";
   public static final String WXPAGE = "wxpage";
-  public static Activity wxPageActivityInstance;
+  public static AppCompatActivity wxPageActivityInstance;
   private ViewGroup mContainer;
   private ProgressBar mProgressBar;
   private WXSDKInstance mInstance;
@@ -302,7 +296,7 @@ public class WXPageActivity extends WXBaseActivity implements IWXRenderListener,
 
   private WXAbstractRenderContainer getHeronContainer(WXSDKInstance instance){
     try{
-      Class containerClass =  getClassLoader().loadClass("com.taobao.weex.heron.container.WXHeronRenderContainer");
+      Class containerClass =  getClassLoader().loadClass("org.apache.weex.heron.container.WXHeronRenderContainer");
       Constructor constructor = containerClass.getConstructor(Context.class);
       WXAbstractRenderContainer container = (WXAbstractRenderContainer) constructor.newInstance(this);
       container.createInstanceRenderView(instance.getInstanceId());
@@ -420,11 +414,11 @@ public class WXPageActivity extends WXBaseActivity implements IWXRenderListener,
     }
   }
 
-  public static Activity getCurrentWxPageActivity() {
+  public static AppCompatActivity getCurrentWxPageActivity() {
     return wxPageActivityInstance;
   }
 
-  public static void setCurrentWxPageActivity(Activity activity) {
+  public static void setCurrentWxPageActivity(AppCompatActivity activity) {
     wxPageActivityInstance = activity;
   }
 

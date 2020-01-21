@@ -21,8 +21,8 @@ package org.apache.weex;
 import android.content.Context;
 import android.test.ApplicationTestCase;
 
-import com.taobao.weex.WXSDKEngine;
-import com.taobao.weex.WXSDKInstance;
+import org.apache.weex.WXSDKEngine;
+import org.apache.weex.WXSDKInstance;
 import org.apache.weex.WXApplication;
 
 /**

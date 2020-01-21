@@ -18,7 +18,6 @@
  */
 package org.apache.weex.uitest.TC_Downgrade;
 
-import android.app.Activity;
 import android.app.Application;
 import android.app.Instrumentation;
 import android.content.Intent;
@@ -28,13 +27,13 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-
+import androidx.appcompat.app.AppCompatActivity;
 import org.apache.weex.R;
-import org.apache.weex.util.ScreenShot;
 import org.apache.weex.WXPageActivity;
 import org.apache.weex.constants.Constants;
+import org.apache.weex.ui.view.WXTextView;
+import org.apache.weex.util.ScreenShot;
 import org.apache.weex.util.ViewUtil;
-import com.taobao.weex.ui.view.WXTextView;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -104,7 +103,7 @@ public class WeexUiTestCaseTcDowngradeDevMTrue extends ActivityInstrumentationTe
                sleep(2000);
 
                setActivity(WXPageActivity.wxPageActivityInstance);
-               Activity activity2 = getActivity();
+               AppCompatActivity activity2 = getActivity();
 
                ViewGroup myGroup = (ViewGroup)(activity2.findViewById(R.id.container));
                ArrayList<View> inputListView = new ArrayList<View>();
