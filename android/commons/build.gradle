@@ -10,7 +10,8 @@ android {
     resourcePrefix "weexcomm"
 
     defaultConfig {
-        minSdkVersion project.minSdkVersion
+        //minSdkVersion project.minSdkVersion
+        minSdkVersion 16
         targetSdkVersion project.targetSdkVersion
         versionCode 1
         versionName "1.0"
