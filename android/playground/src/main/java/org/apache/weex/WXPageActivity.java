@@ -186,6 +186,10 @@ public class WXPageActivity extends WXBaseActivity implements IWXRenderListener,
         mInstance.render(path, WXFileUtils.loadAsset(path, WXPageActivity.this),
             mConfigMap, null,
             WXRenderStrategy.APPEND_ASYNC);
+//        mInstance.renderByUrl(
+//                path,
+//                "http://dotwe.org/raw/dist/38e202c16bdfefbdb88a8754f975454c.bundle.wx",
+//                null, null, WXRenderStrategy.APPEND_ASYNC);
       }
     });
   }
