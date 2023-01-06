@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/apache/incubator-weex-playground#readme",
   "dependencies": {
-    "danger": "^0.18.0"
+    "danger": "^11.2.1"
   }
 }
